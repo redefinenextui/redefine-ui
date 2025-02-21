@@ -1,4 +1,6 @@
-export interface IComponent {
+import { ReactNode } from "react";
+
+export interface IComponentCode {
   description?: string; // Description of the component
   tags?: string[]; // Tags associated with the component
   path: string; // Path for routing
@@ -7,3 +9,8 @@ export interface IComponent {
   dependencies: []
 }
 
+export interface IComponentPreview {
+  name: string,
+  path: string,
+  code: ReactNode
+}

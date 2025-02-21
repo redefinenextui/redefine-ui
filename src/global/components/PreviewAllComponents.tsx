@@ -1,39 +1,41 @@
 "use client";
-import { componentVariants } from "@/data/component";
 import { useRouter } from "next/navigation";
 import { use } from "react"; // ✅ Import React.use()
-import PreviewComponent from "@/common/PreviewComponent";
-import { IComponent } from "@/types/IComponent";
+import ComponentsPreview from "@/data/ComponentsPreview";
+import { IComponentPreview } from "@/types/IComponent";
+import Link from "next/link";
 
 
 const PreviewALlComponents = ({ params }: any) => {
   const router = useRouter();
   const resolvedParams = use(params); // ✅ Unwrap the Promise
   const componentKey = resolvedParams.component.toLowerCase();
+  const allComponents = ComponentsPreview()
 
-  if (!componentVariants[componentKey]) {
+  if (!allComponents[componentKey]) {
     router.push("/404");
     return null;
   }
 
-  const variants = componentVariants[componentKey];
+  const variants = allComponents[componentKey];
   return (
     <div className="p-10">
       <h1 className="text-3xl font-bold mb-6">
         {componentKey.toUpperCase()} Variants
       </h1>
-      <div className="grid grid-cols-3 gap-6">
-        {variants?.map((variant: IComponent) => (
-          <div
-            key={variant.path}
-            className="p-6 border rounded-lg shadow-lg view-component"
-          >
-            <div className="flex items-center justify-between mb-5">
-              <h2 className="text-xl font-semibold mb-5">{variant.name}</h2>
-              <button onClick={() => router.push(`/components/${resolvedParams?.component}/${variant.path}`)} className="bg-blue-500 px-3 py-2 text-white rounded-md">Code</button>
-
+      <div className="grid grid-cols-2 gap-6">
+        {variants?.map((variant: IComponentPreview) => (
+          <div key={variant?.path} className="border shadow-md rounded-md p-4 w-full h-full">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-semibold">{variant?.name}</h2>
+              <Link target="_blank" href={`/components/${componentKey}/${variant?.path}`} className="text-white bg-sky-500 px-4 py-2 rounded-md">Code</Link>
             </div>
-            <PreviewComponent variant={variant} />
+            <div className="border rounded-md w-full h-[300px] flex items-center justify-center overflow-y-auto">
+              <div>
+
+                {variant?.code}
+              </div>
+            </div>
           </div>
         ))}
       </div>

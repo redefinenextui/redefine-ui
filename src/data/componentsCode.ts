@@ -6,12 +6,12 @@ import {
   shadowButtonCode,
   simpleAccordionCode,
   multiLevelAccordionCode,
-} from "@/components";
-import { IComponent } from "@/types/IComponent";
+} from "@/sourceCode";
+import { IComponentCode } from "@/types/IComponent";
 
 export const componentVariants: Record<
   string,
-  IComponent[]
+  IComponentCode[]
 > = {
   buttons: [
     {

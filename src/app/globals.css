@@ -4,10 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-.view-component .sp-c-euXojQ.sp-editor {
-  display: none;
+.sandpack-file-explorer__header__actions{
+ display: flex !important;
 }
-
-.view-component .sp-c-bxeRRt.sp-c-gMfcns {
-  display: none;
+.cm-gutterElement{
+  font-size: 10px;
 }

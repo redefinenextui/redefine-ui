@@ -1,15 +1,16 @@
-export const flipCardCode = `import { useState } from "react";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const FlipCard = () => {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <div 
+    <div
       className="relative w-64 h-40 cursor-pointer"
       onClick={() => setFlipped(!flipped)}
     >
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-blue-500 text-white flex items-center justify-center rounded-lg shadow-lg"
         initial={false}
         animate={{ rotateY: flipped ? 180 : 0 }}
@@ -19,7 +20,7 @@ const FlipCard = () => {
         <h2 className="text-lg font-bold">Front Side</h2>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-gray-800 text-white flex items-center justify-center rounded-lg shadow-lg"
         initial={false}
         animate={{ rotateY: flipped ? 0 : -180 }}
@@ -33,4 +34,3 @@ const FlipCard = () => {
 };
 
 export default FlipCard;
-`;

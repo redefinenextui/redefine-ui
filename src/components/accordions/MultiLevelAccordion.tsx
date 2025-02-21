@@ -1,4 +1,5 @@
-export const multiLevelAccordionCode = `import { useState } from "react";
+
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const accordionData = [
@@ -18,19 +19,19 @@ const MultiAccordion = () => {
     <div className="w-full max-w-md mx-auto mt-10 space-y-4">
       {accordionData.map((item, index) => (
         <div key={item.id} className="border rounded-lg shadow-md">
-          <div 
+          <div
             className="bg-blue-500 text-white px-6 py-4 flex justify-between cursor-pointer rounded-t-lg"
             onClick={() => toggleAccordion(index)}
           >
             <h3 className="text-lg font-semibold">{item.title}</h3>
-            <motion.span 
-              animate={{ rotate: openIndex === index ? 180 : 0 }} 
+            <motion.span
+              animate={{ rotate: openIndex === index ? 180 : 0 }}
               transition={{ duration: 0.3 }}
             >
               ▼
             </motion.span>
           </div>
-          <motion.div 
+          <motion.div
             className="overflow-hidden bg-gray-100"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: openIndex === index ? "auto" : 0, opacity: openIndex === index ? 1 : 0 }}
@@ -45,4 +46,3 @@ const MultiAccordion = () => {
 };
 
 export default MultiAccordion;
-`
