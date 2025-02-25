@@ -1,4 +1,15 @@
-import { BounchButton, FlipCard, HoverCard, MultiLevelAccordion, OutlineButton, ShadowButton, SimpleAccordion } from "@/components";
+import {
+  BounchButton,
+  FlipCard,
+  HoverCard,
+  MultiLevelAccordion,
+  OutlineButton,
+  ShadowButton,
+  SimpleAccordion,
+  
+} from "@/components";
+import HoverButton from "@/components/buttons/Hoverbutton";
+
 import { IComponent } from "@/types/IComponent";
 
 export default function ComponentsPreview() {
@@ -18,6 +29,11 @@ export default function ComponentsPreview() {
         name: "Shadow Button",
         path: "shadow-button",
         code: <ShadowButton />,
+      },
+      {
+        name: "Hover Button",
+        path: "hover-button",
+        code: <HoverButton />,
       },
     ],
     accordion: [
@@ -46,7 +62,5 @@ export default function ComponentsPreview() {
     ],
   };
 
-
   return componentsPreview;
 }
-
