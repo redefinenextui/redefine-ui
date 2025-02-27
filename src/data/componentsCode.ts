@@ -7,6 +7,7 @@ import {
   simpleAccordionCode,
   multiLevelAccordionCode,
 } from "@/sourceCode";
+import { hoverButtonCode } from "@/sourceCode/buttons/hoverButton";
 import { IComponentCode } from "@/types/IComponent";
 
 export const componentVariants: Record<
@@ -36,6 +37,14 @@ export const componentVariants: Record<
       code: [{ "/App.tsx": shadowButtonCode }],
       description: "A button with a shadow effect.",
       tags: ["button", "shadow"],
+      dependencies: [], // Initially empty
+    },
+    {
+      name: "Hover Button",
+      path: "hover-button",
+      code: [{ "/App.tsx": hoverButtonCode }],
+      description: "A button with a hover effect.",
+      tags: ["button", "hover"],
       dependencies: [], // Initially empty
     },
   ],
