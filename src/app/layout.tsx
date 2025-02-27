@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import Navbar from "@/layouts/Navbar";
-import Footer from "@/layouts/Footer";
 
 
 export const metadata: Metadata = {
@@ -21,11 +19,7 @@ export default function RootLayout({
         className={`font-montserrat antialiased`}
       >
         <ThemeProvider attribute={"class"}>
-          <Navbar />
-          <main>
-            {children}
-          </main>
-          <Footer />
+          {children}
         </ThemeProvider>
       </body>
     </html>
