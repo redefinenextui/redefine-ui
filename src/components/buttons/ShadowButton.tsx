@@ -9,7 +9,7 @@ const ShowButton = () => {
   };
 
   return (
-    <div className="flex flex-col items-center space-y-4">
+    <div className="flex flex-col mt-24 justify-center mx-auto items-center space-y-4">
       {/* Show Button */}
       <motion.button
         className="px-6 py-3 rounded-full border-2 border-blue-600 text-blue-600 font-semibold text-lg focus:outline-none hover:bg-blue-600 hover:text-white transition-all"

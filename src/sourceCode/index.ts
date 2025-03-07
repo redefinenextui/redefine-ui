@@ -6,6 +6,7 @@
 export { bounchButtonCode } from "./buttons/bounchButton"
 export { shadowButtonCode } from "./buttons/shadowButton"
 export { outlineButtonCode } from "./buttons/outlineButton"
+// export { test } from "./buttons/TestButton"
 
 // cards
 export { flipCardCode } from "./cards/flipCard"
